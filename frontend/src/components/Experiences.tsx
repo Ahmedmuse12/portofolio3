@@ -1,5 +1,6 @@
 import React from 'react';
 import Experience from './Experience';  // Importer Experience-komponenten
+import '../index.css';  // Ny CSS-fil for erfaringer
 
 export default function Experiences() {
   const experiences = [
@@ -9,12 +10,17 @@ export default function Experiences() {
   ];
 
   return (
-    <div>
+    <div className="experiences-container">
+      <h2 className="experiences-title">Experiences</h2> {/* Legger til tittel for erfaringer */}
       {experiences.length === 0 ? (
-        <p>Ingen erfaringer</p>  // Viser meldingen hvis listen er tom
+        <p className="no-experiences">Ingen erfaringer</p>  // Viser meldingen hvis listen er tom
       ) : (
         experiences.map((experience, index) => (
-          <Experience key={index}>{experience}</Experience>  // Bruk map for å iterere over erfaringene
+          <Experience key={index}>
+            <div className="experience-card">
+              {experience}
+            </div>
+          </Experience>
         ))
       )}
     </div>

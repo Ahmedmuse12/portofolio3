@@ -4,6 +4,8 @@ import Projects from './components/Projects';
 import { Header } from './components/Header';
 import { Contact } from './components/Contact';
 import CreateProject from './components/CreateProject';
+import { z } from "zod";
+import './index.css';
 
 function App() {
   const student = 'Halgeir Geirson';

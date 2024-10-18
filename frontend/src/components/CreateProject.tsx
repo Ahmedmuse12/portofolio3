@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../index.css';  // Sikrer at CSS-en brukes globalt
 
 interface CreateProjectProps {
   addProject: (project: string, category: string) => void;  
@@ -6,25 +7,25 @@ interface CreateProjectProps {
 
 export default function CreateProject({ addProject }: CreateProjectProps) {
   const [projectName, setProjectName] = useState('');
-  const [category, setCategory] = useState('Development'); 
+  const [category, setCategory] = useState('Development');
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (projectName.trim()) {
-      addProject(projectName, category);  
-      setProjectName('');  // Tilbakestiller  inputfeltet
+      addProject(projectName, category);
+      setProjectName('');  // Tilbakestiller inputfeltet
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="create-project-form">
       <div>
         <label htmlFor="projectName">Nytt prosjekt:</label>
         <input
           type="text"
           id="projectName"
           value={projectName}
-          onChange={(e) => setProjectName(e.target.value)}  // Oppdater state når brukeren skriver
+          onChange={(e) => setProjectName(e.target.value)}
           placeholder="Skriv prosjektnavn"
         />
       </div>
@@ -33,7 +34,7 @@ export default function CreateProject({ addProject }: CreateProjectProps) {
         <select
           id="category"
           value={category}
-          onChange={(e) => setCategory(e.target.value)}  
+          onChange={(e) => setCategory(e.target.value)}
         >
           <option value="Development">Development</option>
           <option value="Design">Design</option>

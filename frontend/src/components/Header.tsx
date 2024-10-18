@@ -1,6 +1,5 @@
-// src/components/Header.tsx
-
 import React from 'react';
+import '../index.css';
 
 interface HeaderProps {
   student: string;
@@ -10,10 +9,10 @@ interface HeaderProps {
 
 export function Header({ student, degree, points }: HeaderProps) {
   return (
-    <div>
+    <div className="header-container">
       <h1>{student}</h1>
       <p>Degree: {degree}</p>
-      <p>Points: {points}</p>
+      <p className="header-points">Points: {points}</p>
     </div>
   );
 }
