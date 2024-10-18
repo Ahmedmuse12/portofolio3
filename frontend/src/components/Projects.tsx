@@ -2,8 +2,14 @@ import React from 'react';
 import Project from './Project';
 import '../index.css';
 
+// Definerer typen for prosjektene
+interface ProjectType {
+  name: string;
+  category: string;
+}
+
 interface ProjectsProps {
-  projects: { name: string, category: string }[];
+  projects: ProjectType[];  // Prosjekter er en array av ProjectType
 }
 
 export default function Projects({ projects }: ProjectsProps) {

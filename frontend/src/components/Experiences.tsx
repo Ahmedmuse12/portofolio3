@@ -1,6 +1,6 @@
 import React from 'react';
-import Experience from './Experience';  // Importer Experience-komponenten
-import '../index.css';  // Ny CSS-fil for erfaringer
+import Experience from './Experience';  
+import '../index.css';  
 
 export default function Experiences() {
   const experiences = [
@@ -13,7 +13,7 @@ export default function Experiences() {
     <div className="experiences-container">
       <h2 className="experiences-title">Experiences</h2> {/* Legger til tittel for erfaringer */}
       {experiences.length === 0 ? (
-        <p className="no-experiences">Ingen erfaringer</p>  // Viser meldingen hvis listen er tom
+        <p className="no-experiences">Ingen erfaringer</p>  
       ) : (
         experiences.map((experience, index) => (
           <Experience key={index}>

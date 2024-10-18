@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css';  // Sikrer at CSS-en brukes globalt
+import '../index.css';  
 
 interface CreateProjectProps {
   addProject: (project: string, category: string) => void;  
@@ -13,7 +13,7 @@ export default function CreateProject({ addProject }: CreateProjectProps) {
     e.preventDefault();
     if (projectName.trim()) {
       addProject(projectName, category);
-      setProjectName('');  // Tilbakestiller inputfeltet
+      setProjectName('');  
     }
   };
 
